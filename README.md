@@ -24,7 +24,7 @@
 * [id]
 * nome
 
-## 3- Uso do params:
+## 9 & 10- Uso do params:
 
 ### Pages relacionadas:
 
