@@ -1,40 +1,32 @@
 
-import React, { useState } from 'react';
-import {useRouter} from 'next/router';
 
-
-export default function Input()
+export default function Input(props)
 {
-    const [seuNome,setSeunome] = useState('');
-     const router = useRouter();
-    const handleClick = ()=>
-    {
-        router.push(`/Contacts/${seuNome}/nome`)
-    }
-    const handleChange = (e)=>
-    {
-        setSeunome(e.target.value);
-    }
+    
+ 
+    
     return(
-        <form className="d-flex  max-w-sm">
-             <div class="flex items-center border-b border-pink-500 py-2">
+     <div className="flex m-10 justify-center align-center">
+        <div class="flex items-center border-b border-pink-500 py-2">
+            <form className="d-flex  max-w-sm">
+    
                 <input 
                 type="text" 
                 placeholder= "Digite um nome"
-                value = {seuNome}
-                onChange = {handleChange}
-                ></input>
-             <button class="flex-shrink-0 bg-pink-800 hover:bg-pink-700 border-pink-900 hover:border-pink-700 text-sm border-4 text-white py-1 px-2 rounded" 
-             
-             type="button"
-             onClick={handleClick}>
-                Abrir nome
-            </button>
+                value = {props.entrada}
+                onChange = {props.funcaoAoTrocar} />
+        
+                <button 
+                    class="flex-shrink-0 bg-pink-800 hover:bg-pink-700 border-pink-900 hover:border-pink-700 text-sm border-4 text-white py-1 px-2 rounded" 
+                    type="button"
+                    onClick={props.funcaoClicarEmAlgo}> {props.nomeDoBotao}</button>
 
-          
-             </div>
+            </form>
+        </div>
+            
+    </div>
 
          
-        </form>
+      
     )
 }

@@ -2,9 +2,23 @@
 import Button from "../../Components/Button";
 import Footer from "../../Components/Footer";
 import Input from "../../Components/Input";
+import {useRouter} from 'next/router';
+
+import React, { useState } from 'react';
+
 
 
 export default function Contacts(){
+  const router = useRouter();
+  const [seuNome,setSeunome] = useState('');
+  const handleClick = ()=>
+  {
+      router.push(`/Contacts/${seuNome}/nome`)
+  }
+  const handleChange = (e)=>
+    {
+        setSeunome(e.target.value);
+    }
     return(
         <>
             <div className="flex-col justify-center align-center">
@@ -31,19 +45,29 @@ export default function Contacts(){
 
     
     <>
-    <h1 className="text-2xl font-bold m-10 text-center">
-      Rota dinâmica:
-    </h1>
-    <p className="text-lg text-pink-800 text-center">
-      Bem vindo à rota dinâmica! <br/> Para começar preencha o campo de texto:
-    </p>
-    <div className="flex m-10 justify-center align-center">
-     <Input/>
-    </div>
+      <h1 className="text-2xl font-bold m-10 text-center">
+        Rota dinâmica:
+      </h1>
+      <p className="text-lg text-pink-800 text-center">
+        Bem vindo à rota dinâmica! <br/> Para começar preencha o campo de texto:
+      </p>
+    
+        <Input 
+        funcaoClicarEmAlgo = {handleClick}
+        nomeDoBotao = "Abrir nome"
+        funcaoAoTrocar = {handleChange}
+        entrada = {seuNome}
+      />
 
     </>
  
+    <>
+     <h1 className="text-2xl font-bold m-10 text-center">
+        Uso de Params:
+      </h1>
     
+    
+    </>
     
 
     
