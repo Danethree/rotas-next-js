@@ -23,3 +23,15 @@
 * Contacts
 * [id]
 * nome
+
+## 3- Uso do params:
+
+### Pages relacionadas:
+
+* Contacts
+* nome (params)
+
+### Componentes relacionados:
+
+* Form
+
