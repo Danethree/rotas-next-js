@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Footer from '../Components/Footer'
 
 import Links from '../Components/Links/Links'
-import styles from '../styles/Home.module.css'
+
 
 export default function Home() {
   return (
